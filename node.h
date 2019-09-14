@@ -5,6 +5,7 @@ template <typename T>
 struct Node {
     T data;
     Node<T>* next;
+    int Rp = 0;
       
     Node(T data) : data(data) {
         next = nullptr;
