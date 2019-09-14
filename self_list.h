@@ -73,22 +73,36 @@ class SelfList {
                                 (*iterador) = (*iterador)->next;
                                 moved->next = (*before);
                                 (*before) = moved;
-                                break;
+                                return true;
                             case Count:
                                 moved->Rp++;
                                 while ((moved->Rp)<((*other)->Rp)){
+                                    before = &((*other));
                                     other = &((*other)->next);
                                 }
-                                moved->next = *other;
+                                (*iterador) = (*iterador)->next;
+                                if (before!= &head){
+                                    (*other)->next = moved->next;
+                                    moved->next = (*before)->next;
+                                    (*before) = moved;
 
-                                break;
+                                }else{
+                                    if (other == &head) {
+                                        moved->next = head;
+                                        head = moved;
+                                    }else{
+                                        moved->next = (*other);
+                                        (*before)->next = moved;
+                                    }
+                                }
+                                return true;
+
                             case Transpose:
                                 (*iterador) = (*iterador)->next;
                                 moved->next = head;
                                 head = moved;
-                                break;
+                                return true;
                         }
-                        i = Size;
                     }else {
                         (head)->Rp++;
                         return true;

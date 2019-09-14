@@ -8,7 +8,7 @@ using namespace std;
 
 int main(int argc, char const *argv[]) {
     Tester::execute();
-    Method me = Move;
+    Method me = Count;
     int array[] ={1,2,3,4,3,2,5,6,4,6,3,6,7,8,9,2,7,12};
     SelfList<int> *l1 = new SelfList<int>(me);
     for (int i = 0; i < 18; i++) {
@@ -20,7 +20,8 @@ int main(int argc, char const *argv[]) {
     }
     l1->print();
     for (int k = 1; k <=9 ; ++k) {
-        l1->find(9);
+        l1->find(k*3);
+        l1->print();
     }
     l1->print();
     //SelfList<int> list(SelfList<int>::Move);
