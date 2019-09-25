@@ -35,6 +35,7 @@ class TraitsList {
                 Size++;
                 return true;
             }else{
+                // Estás repitiendo mucho código
                 Node<T>** temp = &head;
                 if(!find(data,temp)){
                     temp = &head;
@@ -59,6 +60,7 @@ class TraitsList {
         }
              
         bool remove(T data) {
+            // El insert debería ser similar, este remove está muy parecido al de Said
             Node<T>** temp = &head;
             if (find(data,temp)){
                 auto toDelete = *temp;
@@ -70,6 +72,7 @@ class TraitsList {
         }  
 
         bool find(T data) {
+            // Deberías usar el find de arriba
             Node<T> *iterador = head;
             for (int i = 0; i <this->size() ; i++) {
                 if (iterador->data == data){

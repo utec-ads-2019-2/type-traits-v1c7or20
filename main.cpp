@@ -8,10 +8,10 @@ using namespace std;
 
 int main(int argc, char const *argv[]) {
     Tester::execute();
-    Method me = Count;
+    Method me = Move;
     int array[] ={1,2,3,4,3,2,5,6,4,6,3,6,7,8,9,2,7,12};
     SelfList<int> *l1 = new SelfList<int>(me);
-    for (int i = 0; i < 18; i++) {
+    /*for (int i = 0; i < 18; i++) {
         l1->insert(array[i]);
     }
     l1->print();
@@ -23,7 +23,18 @@ int main(int argc, char const *argv[]) {
         l1->find(k*3);
         l1->print();
     }
+    l1->print();*/
+
+    for (int i = 0; i < 100; i++) {
+        l1->insert(i);
+    }
+
+    l1->find(50);
+    l1->find(49);
+    l1->find(50);
+
     l1->print();
+
     //SelfList<int> list(SelfList<int>::Move);
     return EXIT_SUCCESS;
 }

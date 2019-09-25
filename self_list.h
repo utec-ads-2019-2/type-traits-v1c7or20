@@ -65,7 +65,10 @@ class SelfList {
                     if((*iterador) != head){
                         Node<T> *moved = (*iterador);
                         Node<T> **other = &head;
+                        // Cada case podría ser un método privado
+                        // Mucho código repetido
                         switch (method){
+                            // Move y Transpose están con la lógica al revés
                             case Move:
                                 for (int j = 0; j <i-1 ; ++j) {
                                     before = &(*before)->next;
@@ -116,6 +119,7 @@ class SelfList {
         }
 
         T operator [] (int index) {
+            // Control de los casos donde el índice es negativo o mayor?
             Node<T> * iterador = head;
             for (int i = 0; i <index ; i++) {
                 iterador = iterador->next;
