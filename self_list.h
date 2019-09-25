@@ -92,7 +92,7 @@ class SelfList {
                                 }else{
                                     if (other == &head) {
                                         moved->next = head;
-                                        head = moved;
+                                        head = moved; 
                                     }else{
                                         moved->next = (*other);
                                         (*before)->next = moved;
